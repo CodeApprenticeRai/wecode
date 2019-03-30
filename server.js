@@ -19,6 +19,8 @@ app.use(
 );
 app.use(bodyParser.json());
 
+require("./api")(app);
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 
