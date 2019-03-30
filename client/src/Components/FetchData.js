@@ -50,11 +50,7 @@ class FetchData extends Component {
 
     return (
       <div className="App">
-        {this.state.loading || !this.state.user ? (
-          <div>Loading</div>
-        ) : (
-          <div>{this.state.user.id}</div>
-        )}
+       <h3>Indiana University - Perdue University Indianapolis </h3> 
         <Table striped bordered hover className="table">
           <tbody>
             <tr>
