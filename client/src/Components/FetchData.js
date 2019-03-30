@@ -59,16 +59,20 @@ class FetchData extends Component {
           <tbody>
             <tr>
               <td>Java</td>
-              <td>80%</td>
+              <td>43%</td>
             </tr>
             <tr>
               <td>C++</td>
-              <td>50%</td>
+              <td>28%</td>
             </tr>
             <tr>
               <td>Python</td>
-              <td>40%</td>
+              <td>18%</td>
             </tr>
+            <tr>
+            <td>Others</td>
+            <td>11%</td>
+          </tr>
           </tbody>
         </Table>
         ;
