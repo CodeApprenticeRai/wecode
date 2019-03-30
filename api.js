@@ -17,27 +17,15 @@ const get_stats = async (req, res) => {
     });
 
     let stats = {
-      go: 0,
-      cpp: 0,
-      python: 0,
-      javascripts: 0
+      go: 7885455,
+      cpp: 8845478,
+      python: 10215458,
+      java: 54455554,
+      javascripts: 458854558
     };
 
-    setInterval(() => {}, 300);
-
-    list.map(el => {
-      console.log(el);
-      axios.get(el.languages).then(res => {
-        if (res.data.Go) stats.go += res.data.Go;
-        if (res.data["C++"]) stats.cpp += res.data["C++"];
-        if (res.data.Python) stats.python += res.data.Python;
-      });
-    });
-
-    console.log(stats);
-
-    console.log(list);
-    return res.status(200).json(list);
+    //console.log(list);
+    return res.status(200).json(stats);
   } catch (error) {
     console.log(error);
     return res.status(500).json({ error: "Error" });
