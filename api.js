@@ -45,5 +45,5 @@ const get_stats = async (req, res) => {
 };
 
 module.exports = function(app) {
-  app.get("/stats/:id", get_stats);
+  app.get("/api/stats/google", get_stats);
 };

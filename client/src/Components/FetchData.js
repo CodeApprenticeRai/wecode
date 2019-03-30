@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import { Table } from 'react-bootstrap';
-import fetch from './FetchData.css';
+import React, { Component } from "react";
+import { Table } from "react-bootstrap";
+import axios from "axios";
 
 class FetchData extends Component {
-
   state = {
     loading: true,
     user: null
@@ -19,28 +18,44 @@ class FetchData extends Component {
   //   });
   //   console.log(data[0]);
   // }
+ 
+  componentDidMount() {
+    const url = "/api/stats/google";
+    return axios
+      .get(url)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(e => console.log(e));
+  }
+
+/*
+  componentDidMount() {
+    const url = "/api/stats/google";
+    return fetch(url).then(res => console.log(res));
+  }*/
 
   render() {
-
     let java = 1040;
     let cpp = 2048;
     let python = 4440;
     let swift = 728;
 
-
     let total = java + cpp + python + swift;
 
-    java = (java/total) * 100;
-    cpp = (cpp/total) * 100;
-    python = (python/total) * 100;
-    swift = (swift/total) * 100;
-
+    java = (java / total) * 100;
+    cpp = (cpp / total) * 100;
+    python = (python / total) * 100;
+    swift = (swift / total) * 100;
 
     return (
       <div className="App">
-        {this.state.loading || !this.state.user ? (<div>Loading</div>) : (<div>{this.state.user.id}</div>)}
-        
-        <Table striped bordered hover className='table'>
+        {this.state.loading || !this.state.user ? (
+          <div>Loading</div>
+        ) : (
+          <div>{this.state.user.id}</div>
+        )}
+        <Table striped bordered hover className="table">
           <tbody>
             <tr>
               <td>Java</td>
@@ -55,11 +70,11 @@ class FetchData extends Component {
               <td>40%</td>
             </tr>
           </tbody>
-        </Table>;
+        </Table>
+        ;
       </div>
     );
   }
-  
 }
 
 export default FetchData;

@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "sass": "node-sass -o public/modules/materialize/css/custom build_src/materialize-src/sass/materialize.scss",
+    "sass-watch": "node-sass -o public/modules/materialize/css/custom build_src/materialize-src/sass/materialize.scss --watch",
+    "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha \"./{,!(node_modules)/**/}*.test.js\"",
+    "test-watch": "nodemon --exec \"npm test\"",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "chalk": "^2.4.1",
+    "cors": "^2.8.5",
+    "express": "^4.16.3",
+    "morgan": "^1.9.1"
+  }
+}
