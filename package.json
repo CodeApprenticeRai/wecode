@@ -2,14 +2,10 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
-    "sass": "node-sass -o public/modules/materialize/css/custom build_src/materialize-src/sass/materialize.scss",
-    "sass-watch": "node-sass -o public/modules/materialize/css/custom build_src/materialize-src/sass/materialize.scss --watch",
-    "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha \"./{,!(node_modules)/**/}*.test.js\"",
-    "test-watch": "nodemon --exec \"npm test\"",
-    "server": "nodemon index.js",
+    "start": "node server.js",
+    "server": "nodemon server.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
