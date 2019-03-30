@@ -1,0 +1,61 @@
+
+.table {
+    margin: 0 auto;
+    width: 600px;
+  }
+
+  
+  th, td {
+    padding: 10px;
+  }
+  
+  td {
+    text-align: center;
+  }
+  
+  tr td:first-child {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  /* tr:nth-child(odd){
+    background-color: #EDEDED;
+  } */
+  
+  .four {
+    width: 20vw;
+  }
+  
+  .six {
+    width: 28vw;
+  }
+  
+  .seven {
+    width: 32vw;
+  }
+  
+  .nine{
+    width: 36vw;
+  }
+  
+  .ten {
+    width: 40vw;
+  }
+  
+  hr {
+    height: 10px;
+    float: left;
+    border-radius: 10px;
+  }
+  
+  .low {
+    background-color: red;
+  }
+  
+  .medium {
+    background-color: orange;
+  }
+  
+  .high {
+    background-color: green;
+  }
