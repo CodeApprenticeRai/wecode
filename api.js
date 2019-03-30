@@ -4,10 +4,17 @@ const axios = require("axios");
 async function get_stats(req, res) {
   const resp = await axios.get("https://api.github.com/orgs/google/repos");
   let list = [];
-  let stat = []
+  let stat = [];
   resp.data.map(item => {
-    if (item.language) {
-      list.push({ repo: item.git_url, language: item.language });
+    list.push({ repo: item.git_url, languages: item.languages_url });
+  });
+
+  let stats = {};
+
+  list.map(async el => {
+    if (el.languages) {
+      const langs = await axios.get(el.languages);
+      
     }
   });
   return res.json(list);
